@@ -20,7 +20,7 @@
 			?>
 		</nav>
 	</header>	
-	<div class="page container totu">
+	<div class="page container">
 		<?php 
 		if(isset($_GET['page'])){
 			$page = $_GET['page'];
