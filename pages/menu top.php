@@ -10,8 +10,8 @@
 			<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
 			<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
 			<li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
-			<li><a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
-		</ul>
+			<li><a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>		
+		</ul>			
 <!-- 		<form action=""><input type="text" class="">
 			<input type="submit">
 		</form> -->
@@ -24,5 +24,27 @@
 		<li><a href="index.php?page=2">Review</a></li>
 		<li><a href="index.php?page=3">Register</a></li>
 		<li><a href="index.php?page=4">Admin</a></li>
+		<li><a id="login" href="#dialog" name="modal"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
 	</ul>	
+
+	<div id="boxes">
+		<div id="dialog" class="window">
+			<form class="login-form" action="formLogin.php">
+				<input class="form-control" placeholder="Login" name="login" type="text" size="15" maxlength="15">					
+				<input class="form-control" placeholder="Password" name="pass1" type="password" size="15" maxlength="15">
+				<input class="form-control"  type="submit" name="login" value="login">
+			</form>
+			<span><a href="#" class="close">Close</a></span>
+		</div>
+		<div id="mask"></div>
+	</div>
+
 </div>
+<?php 
+	if (empty($_SESSION['login']) || empty($_SESSION['id'])) {
+		echo "You are not logged in";
+	}
+	else{
+		echo "You are logged in as".$_SESSION['login'];
+	}
+?>

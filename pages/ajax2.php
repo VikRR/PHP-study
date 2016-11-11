@@ -1,5 +1,4 @@
 <?php 
-
 include_once("functions.php");
 connect();
 // $hid = $_GET['hoid'];

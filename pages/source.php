@@ -1,6 +1,6 @@
 <section class="banner-area">
-	<div class="row">
-		<div class="container">
+	<div class="container">
+		<div class="row">
 			<div class="col-md-6 banner-area-header text-center">
 				<h1>Where your journey begins.</h1>
 				<p>Discover your next great adventure,<br>become an explorer to get started!</p>

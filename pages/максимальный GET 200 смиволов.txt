@@ -5,3 +5,4 @@ git add name file (.) все файлы
 git commit -a -m "version1"
 			-a перед выполнением создать коментарии
 Bar73_Mg30nA*
+

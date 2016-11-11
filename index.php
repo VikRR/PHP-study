@@ -1,3 +1,5 @@
+<?php 
+session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,6 +34,8 @@
 		?>
 	</div>
 
+
+
 	<!-- <footer class="footer">
 		<nav class="container text-center">
 			<?php include_once("pages/menu footer.php");?>			
@@ -39,11 +43,11 @@
 	</footer>	 -->
 	<script>
 	// $(".owl-carousel").owlCarousel();
-	</script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/script.js"></script>
-	
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/script.js"></script>
+
 </body>
 </html>
