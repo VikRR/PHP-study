@@ -118,84 +118,84 @@
 								</select>
 							</div>
 
-								<div class="col-md-4">
-									<input type="text" placeholder="Add Hotel" class="form-control" name="hotel">
-								</div>
-								<div class="col-md-2">
-									<input type="text" placeholder="Add Star" class="form-control" name="star">
-								</div>
-								<div class="col-md-2">
-									<input type="text" placeholder="Add Cost" class="form-control" name="cost">
-								</div>
-								<textarea class="form-control" name="info" cols="91" rows="3" placeholder="Add Info"></textarea>
-								<input type="submit" name="addhotel" class="btn btn-default" value="Add Hotel...">
-							</form>
-							<?php
-							if(isset($_POST['addhotel'])){
-								$hotel = trim(htmlspecialchars($_POST['hotel']));
-								if($city = "") exit();
-								$country_hot_id = explode("-", $_POST['citycountryname']);
-								$star = $_POST['star'];
-								$cost = $_POST['cost'];
-								$info = $_POST['info'];
-								$insert_hotel = 'insert into hotels (hotel, city_id, country_id, stars, cost, info)
-								values("'.$hotel.'", '.$country_hot_id[0].', '.$country_hot_id[1].', '.$star.', '.$cost.', "'.$info.'")';
-								mysql_query($insert_hotel);
-								echo'<script>window.location.href=document.URL;</script>';
-							}
-							?>
-							<div class="table">
-								<table>
-									<tr>
-										<th>Id</th>
-										<th>Hotel</th>
-										<th>City</th>
-										<th>Country</th>
-										<th>Stars</th>
-										<th>Cost</th>
-										<th>Info</th>
-									</tr>
-									<tr>
-										<?php
-										$sel = 'select ho.id, ho.hotel, ci.city, co.country, ho.stars, ho.cost, ho.info
-										from hotels ho, cities ci, countries co
-										where ho.city_id = ci.id and ho.country_id = co.id';
-										$res = mysql_query($sel);
-										while($row = mysql_fetch_array($res, MYSQL_NUM)){
-											?>
-											<td> <?php echo $row[0]; ?> </td>
-											<td> <?php echo $row[1]; ?> </td>
-											<td> <?php echo $row[2]; ?> </td>
-											<td> <?php echo $row[3]; ?> </td>
-											<td> <?php echo $row[4]; ?> </td>
-											<td> <?php echo $row[5]; ?> </td>
-											<td> <?php echo $row[6]; ?> </td>
-										</tr>
-										<?php } ?>
-									</table>
-								</div>
+							<div class="col-md-4">
+								<input type="text" placeholder="Add Hotel" class="form-control" name="hotel">
 							</div>
-							<div class="row">
-								<hr>
-						<div class="col-md-4">
-							<form action="index.php?page=4" method="post" enctype="multipart/form-data">
-							<select class="form-control" name="hotelid">
-								<?php
-									$sel= 'select ho.id, co.country, ci.city, ho.hotel
-									from countries co, cities ci, hotels ho
-									where co.id = ho.country_id and ci.id = ho.city_id
-									order by co.country';
+							<div class="col-md-2">
+								<input type="text" placeholder="Add Star" class="form-control" name="star">
+							</div>
+							<div class="col-md-2">
+								<input type="text" placeholder="Add Cost" class="form-control" name="cost">
+							</div>
+							<textarea class="form-control" name="info" cols="91" rows="3" placeholder="Add Info"></textarea>
+							<input type="submit" name="addhotel" class="btn btn-default" value="Add Hotel...">
+						</form>
+						<?php
+						if(isset($_POST['addhotel'])){
+							$hotel = trim(htmlspecialchars($_POST['hotel']));
+							if($city = "") exit();
+							$country_hot_id = explode("-", $_POST['citycountryname']);
+							$star = $_POST['star'];
+							$cost = $_POST['cost'];
+							$info = $_POST['info'];
+							$insert_hotel = 'insert into hotels (hotel, city_id, country_id, stars, cost, info)
+							values("'.$hotel.'", '.$country_hot_id[0].', '.$country_hot_id[1].', '.$star.', '.$cost.', "'.$info.'")';
+							mysql_query($insert_hotel);
+							echo'<script>window.location.href=document.URL;</script>';
+						}
+						?>
+						<div class="table">
+							<table>
+								<tr>
+									<th>Id</th>
+									<th>Hotel</th>
+									<th>City</th>
+									<th>Country</th>
+									<th>Stars</th>
+									<th>Cost</th>
+									<th>Info</th>
+								</tr>
+								<tr>
+									<?php
+									$sel = 'select ho.id, ho.hotel, ci.city, co.country, ho.stars, ho.cost, ho.info
+									from hotels ho, cities ci, countries co
+									where ho.city_id = ci.id and ho.country_id = co.id';
 									$res = mysql_query($sel);
-									while($row = mysql_fetch_array($res, MYSQL_NUM)){?>
-								  <option value=" <?php echo $row[0]; ?> "> <?php echo $row[1].'&nbsp;&nbsp;'.$row[2].'&nbsp;&nbsp;'.$row[3]; ?> </option>
-								<?php }
-								 mysql_free_result($res);
-								  ?>
-							</select>
-							<input class="form-control" type="file" name="file[]" multiple accept="image/*">
-							<input class="btn btn-default" type="submit" name="addimages" value="Add Images...">
-							</form>
-							<?php
+									while($row = mysql_fetch_array($res, MYSQL_NUM)){
+										?>
+										<td> <?php echo $row[0]; ?> </td>
+										<td> <?php echo $row[1]; ?> </td>
+										<td> <?php echo $row[2]; ?> </td>
+										<td> <?php echo $row[3]; ?> </td>
+										<td> <?php echo $row[4]; ?> </td>
+										<td> <?php echo $row[5]; ?> </td>
+										<td> <?php echo $row[6]; ?> </td>
+									</tr>
+									<?php } ?>
+								</table>
+							</div>
+						</div>
+						<div class="row">
+							<hr>
+							<div class="col-md-4">
+								<form action="index.php?page=4" method="post" enctype="multipart/form-data">
+									<select class="form-control" name="hotelid">
+										<?php
+										$sel= 'select ho.id, co.country, ci.city, ho.hotel
+										from countries co, cities ci, hotels ho
+										where co.id = ho.country_id and ci.id = ho.city_id
+										order by co.country';
+										$res = mysql_query($sel);
+										while($row = mysql_fetch_array($res, MYSQL_NUM)){?>
+										<option value=" <?php echo $row[0]; ?> "> <?php echo $row[1].'&nbsp;&nbsp;'.$row[2].'&nbsp;&nbsp;'.$row[3]; ?> </option>
+										<?php }
+										mysql_free_result($res);
+										?>
+									</select>
+									<input class="form-control" type="file" name="file[]" multiple accept="image/*">
+									<input class="btn btn-default" type="submit" name="addimages" value="Add Images...">
+								</form>
+								<?php
 								if (isset($_REQUEST['addimages'])){
 									foreach($_FILES['file']['name'] as $k => $v){
 										if ($_FILES['file']['error'][$k] !=0) {
@@ -208,8 +208,8 @@
 										}
 									}
 								}
-							 ?>
-							 </div>
-						</div>
+								?>
+							</div>
 						</div>
 					</div>
+				</div>

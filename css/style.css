@@ -51,25 +51,27 @@ ul li a{ text-decoration: none; }
 .top-nav-social .fa{ margin-left: 30px; }
 .fa{ 
 	margin-right: 10px;
-	/*color: #fff;*/
 	font-size: 13px;
 }
-.page{ margin-top: 110px;}
+.page{ margin-top: 50px;}
 .top-navigation{
 	border-bottom: 1px solid #5f5f5f;
 }
 .logo-fir, .fa, .banner-area,
 .banner-area-form input[type="submit"],
-.tour-type 
-{color: #fff;}
-.logo-sec{color: #007bff;}
+.tour-type {
+	color: #fff;
+}
+.logo-sec,.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus{
+	color: #007bff;
+}
 .navbar-brand {font-size: 40px;}
 .navbar-brand, .banner-area-header h1,
 .banner-area-form h2, .tour-type-area h3,
 .tour-type, .admin-page, .review{
 	font-family: "BigNoodleTitling";
 }
-.navbar-nav > li > a {font-size: 16px;}
+.navbar-nav > li > a {font-size: 16px;} 
 /*--------------------------------section one-----------------*/
 .banner-area{
 	background: url('../img/Layer 15.png') no-repeat;
@@ -86,7 +88,6 @@ ul li a{ text-decoration: none; }
 }
 .banner-area-header h1{
 	padding-top: 80%;
-	/*text-transform: uppercase;*/
 	font-size: 62px;
 }
 .banner-area-header h1,
@@ -100,7 +101,6 @@ ul li a{ text-decoration: none; }
 	top: 26%;
 	left: 54.5%;
 	background-color: #fff;
-	/*color: #606060;*/
 	width: 510px;
 	padding-bottom: 65px;
 	padding-top: 30px;
@@ -115,31 +115,28 @@ ul li a{ text-decoration: none; }
 	font-size: 70px;
 	margin-bottom: 0;
 }
-.banner-area-form input[type="text"]{
-	margin-left: -8px;
-	margin-bottom: 20px;
+
+#hotellist table{
+	margin: 0;
+	margin-left: auto;
+	margin-right: auto;
+	width: 430px;
+	background: #f2f2f2;
+	border-radius: 4px;
 }
-.banner-area-form input{
+#hotellist table, #hotellist td, #hotellist th{
+	border: 1px solid #BDC3C7;
+}
+.banner-area-form select{
 	height: 45px;
 	width: 430px;
-	padding-left: 20px;
-	background: #f2f2f2;
-	border: 1px solid #f2f2f2;
-	border-radius: 2px;		
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
 }
-.banner-area-form input[type="submit"]{
-	background: #006fe6;
-	border: 1px solid #006fe6;
-	font-family: "OpenSansBold";
-	font-size: 16px;
+.banner-area-form select{
+	border-color: #f2f2f2;
 }
-
-.banner-area-form i.fa.fa-search,
-.banner-area-form i.fa.fa-plane,
-.banner-area-form i.fa.fa-bed,
-.banner-area-form i.fa.fa-calendar
-{margin-left: -40px;}
-.banner-area-form ::-webkit-input-placeholder{font-size: 16px;}
 .tour-type-area{
 	height: 710px;
 	background: url("../img/Layer 6.png");

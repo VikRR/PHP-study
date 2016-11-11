@@ -1,7 +1,7 @@
 максимальный GET 200 смиволов
 git init
 git status
-git add name file
+git add name file (.) все файлы
 git commit -a -m "version1"
 			-a перед выполнением создать коментарии
 Bar73_Mg30nA*
